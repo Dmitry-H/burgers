@@ -4,6 +4,8 @@
   align-items: center;
   //padding-bottom: 37px;
   min-height: 650px;
+  width: 1100px;
+  margin: 0 auto;
 
   &__header {
     margin: 65px 0;
@@ -26,5 +28,12 @@
     background-image: url(../img/bg-we-best.png);
     background-repeat: no-repeat;
     background-position: center center;
+  }
+
+  &--reviews {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
   }
 }

@@ -1,0 +1,59 @@
+.review {
+  position: relative;
+
+  &__photo {
+    display: block;
+  }
+
+  &:hover &__container {
+    display: block;
+  }
+
+  &__container {
+    display: none;
+    padding: 41px 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(14, 14, 14, 0.7);
+    //min-width: 275px;
+    //min-height: 325px;
+  }
+
+  &__header {
+    margin: 0;
+    margin-bottom: 13px;
+    line-height: 30px;
+    font-size: 13px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: $gagalinregular;
+    font-weight: normal;
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 12px;
+    line-height: 24px;
+    font-size: 14px;
+    color: #fff;
+    font-family: $ubuntulight;
+  }
+
+  &__detail {
+    display: inline-block;
+    padding: 2px 14px;
+    border-radius: 5px;
+    background-color: #2f3234;
+    line-height: 30px;
+    font-size: 13px;
+    font-family: $ubuntumedium;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: #1f2122;
+    }
+  }
+}
