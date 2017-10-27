@@ -1,0 +1,29 @@
+.page-header {
+  display: flex;
+  padding-top: 8px;
+  //padding: 8px 0 0;
+  margin-bottom: -7px;
+  flex-direction: row;
+  align-items: center;
+
+  &__logo {
+    display: block;
+  }
+
+  &__buy {
+    display: block;
+    padding: 3px 15px;
+    background-color: #e45028;
+    border-radius: 5px;
+    font-family: $ubuntumedium;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 30px;
+    font-size: 13px;
+
+    &:hover {
+      background-color: #c1401e;
+    }
+  }
+}

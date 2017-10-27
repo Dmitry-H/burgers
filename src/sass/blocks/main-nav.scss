@@ -1,0 +1,41 @@
+.main-nav {
+  margin-left: auto;
+
+  &__items {
+    @include list-style;
+    display: flex;
+  }
+
+  &__item {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 18px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+
+    &:last-child {
+      &::after {
+        content: normal;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 5px 17px;
+    font-family: $ubuntumedium;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 30px;
+    font-size: 13px;
+  }
+}

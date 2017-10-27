@@ -1,0 +1,42 @@
+.burger-presentation {
+
+  display: flex;
+  justify-content: center;
+  margin-bottom: 99px;
+
+  &__photo-wrapper {
+    padding-left: 51px;
+    margin-right: 15px;
+    background-image: url(../img/drops.svg);
+    background-position: 15px 66px;
+    background-repeat: no-repeat;
+  }
+
+  &__photo {
+    display: block;
+  }
+
+  &__description {
+    padding: 135px 0 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__first-line {
+    margin-bottom: 17px;
+    font-family: $gagalinregular;
+    color: #f9b43b;
+    text-transform: uppercase;
+    line-height: 85px;
+    font-size: 72px;
+  }
+
+  &__second-line {
+    font-family: $lifehackmedium;
+    color: #fff;
+    text-transform: lowercase;
+    line-height: 60px;
+    font-size: 65px;
+    letter-spacing: -2px;
+  }
+}

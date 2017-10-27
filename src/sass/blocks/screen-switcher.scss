@@ -1,0 +1,36 @@
+.screen-switcher {
+  @include list-style;
+  position: absolute;
+  top: 90px;
+  right: 451px;
+
+  &__item {
+    margin-bottom: 5px;
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    width: 14px;
+    height: 14px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    font-size: 0;
+
+    &--active {
+      border: 1px solid #f9fafa;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 4px;
+      height: 4px;
+      background-color: #fff;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
