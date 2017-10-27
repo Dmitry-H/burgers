@@ -1,8 +1,12 @@
 .review {
   position: relative;
+  height: 50vh;
+  width: 25%;
+  overflow: hidden;
 
   &__photo {
     display: block;
+    width: 100%;
   }
 
   &:hover &__container {
@@ -16,9 +20,6 @@
     top: 0;
     bottom: 0;
     background-color: rgba(14, 14, 14, 0.7);
-    //box-sizing: border-box;
-    //min-width: 275px;
-    //min-height: 325px;
   }
 
   &__header {

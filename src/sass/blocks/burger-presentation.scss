@@ -2,7 +2,8 @@
 
   display: flex;
   justify-content: center;
-  margin-bottom: 99px;
+  flex-direction: row;
+  //margin-bottom: 99px;
 
   &__photo-wrapper {
     padding-left: 51px;
