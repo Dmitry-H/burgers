@@ -1,0 +1,38 @@
+.features {
+  @include list-style;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-basis: 300px;
+    //flex-grow: 1;
+  }
+
+  &__image {
+    display: block;
+    margin-bottom: 37px;
+  }
+
+  &__name {
+    display: block;
+    margin-bottom: 16px;
+    line-height: 28px;
+    font-size: 24px;
+    color: #2f3234;
+    font-family: $lifehackmedium;
+    font-weight: normal;
+  }
+
+  &__description {
+    margin: 0;
+    line-height: 24px;
+    font-size: 14px;
+    color: #2f3234;
+    font-family: $ubuntulight;
+  }
+}
