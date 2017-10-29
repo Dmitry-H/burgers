@@ -1,0 +1,9 @@
+.main-wrapper {
+
+  &__pagination {
+    position: fixed;
+    top: 90px;
+    right: 46px;
+    z-index: 100;
+  }
+}

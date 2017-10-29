@@ -1,9 +1,5 @@
 .screen-switcher {
   @include list-style;
-  position: fixed;
-  top: 90px;
-  right: 46px;
-  z-index: 100;
 
   &__item {
     margin-bottom: 5px;

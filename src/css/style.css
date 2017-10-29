@@ -433,6 +433,12 @@ template {
   font-weight: normal;
   font-style: normal; }
 
+.main-wrapper__pagination {
+  position: fixed;
+  top: 90px;
+  right: 46px;
+  z-index: 100; }
+
 .screen {
   min-height: 650px;
   height: 100vh;
@@ -623,11 +629,7 @@ template {
 .screen-switcher {
   list-style: none;
   margin: 0;
-  padding: 0;
-  position: fixed;
-  top: 90px;
-  right: 46px;
-  z-index: 100; }
+  padding: 0; }
   .screen-switcher__item {
     margin-bottom: 5px; }
   .screen-switcher__link {
