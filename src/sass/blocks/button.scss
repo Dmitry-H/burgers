@@ -1,0 +1,29 @@
+.button {
+  display: block;
+  padding: 3px 15px;
+  border-radius: 5px;
+  font-family: $ubuntumedium;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 30px;
+  font-size: 13px;
+
+  &--header {
+    background-color: #e45028;
+
+    &:hover {
+      background-color: #c1401e;
+    }
+  }
+
+  &--review {
+    display: inline-block;
+    background-color: #2f3234;
+
+    &:hover {
+      background-color: #1f2122;
+    }
+  }
+
+}

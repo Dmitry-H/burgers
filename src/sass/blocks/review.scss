@@ -6,7 +6,15 @@
 
   &__photo {
     display: block;
-    width: 100%;
+/*Тут костыль с медиа-запросом, чтобы фото не разъезжались по вертикали при
+  слишком маленькой ширине экрана*/
+    @media (min-width: 1420px) {
+      width: 100%;
+    }
+
+    @media (max-width: 1420px) {
+      height: 100%;
+    }
   }
 
   &:hover &__container {
@@ -40,22 +48,5 @@
     font-size: 14px;
     color: #fff;
     font-family: $ubuntulight;
-  }
-
-  &__detail {
-    display: inline-block;
-    padding: 2px 14px;
-    border-radius: 5px;
-    background-color: #2f3234;
-    line-height: 30px;
-    font-size: 13px;
-    font-family: $ubuntumedium;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-
-    &:hover {
-      background-color: #1f2122;
-    }
   }
 }

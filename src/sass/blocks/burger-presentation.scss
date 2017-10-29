@@ -1,5 +1,4 @@
 .burger-presentation {
-
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -21,15 +20,6 @@
     padding: 135px 0 0;
     display: flex;
     flex-direction: column;
-  }
-
-  &__first-line {
-    margin-bottom: 17px;
-    font-family: $gagalinregular;
-    color: #f9b43b;
-    text-transform: uppercase;
-    line-height: 85px;
-    font-size: 72px;
   }
 
   &__second-line {

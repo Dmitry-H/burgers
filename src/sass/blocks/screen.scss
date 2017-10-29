@@ -2,17 +2,24 @@
   min-height: 650px;
   height: 100vh;
   box-sizing: border-box;
-  /*width: 1100px;
-  margin: 0 auto;*/
 
-  &__header {
+  &__title {
     margin: 0;
-    margin-bottom: 65px;
-    font-size: 72px;
-    color: #2f3234;
     font-family: $gagalinregular;
+    text-transform: uppercase;
+    line-height: 85px;
+    font-size: 72px;
     font-weight: normal;
-    text-align: center;
+
+    &--greeting {
+      margin-bottom: 17px;
+      color: #f9b43b;
+    }
+
+    &--we-best {
+      margin-bottom: 65px;
+      color: #2f3234;
+    }
   }
 
   &__scroll-down {

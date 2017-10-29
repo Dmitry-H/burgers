@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -436,17 +437,20 @@ template {
   min-height: 650px;
   height: 100vh;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  /*width: 1100px;
-  margin: 0 auto;*/ }
-  .screen__header {
+  box-sizing: border-box; }
+  .screen__title {
     margin: 0;
-    margin-bottom: 65px;
-    font-size: 72px;
-    color: #2f3234;
     font-family: gagalinregular, Arial, sans-serif;
-    font-weight: normal;
-    text-align: center; }
+    text-transform: uppercase;
+    line-height: 85px;
+    font-size: 72px;
+    font-weight: normal; }
+    .screen__title--greeting {
+      margin-bottom: 17px;
+      color: #f9b43b; }
+    .screen__title--we-best {
+      margin-bottom: 65px;
+      color: #2f3234; }
   .screen__scroll-down {
     margin-bottom: 40px; }
   .screen--greeting {
@@ -474,6 +478,26 @@ template {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start; }
+
+.button {
+  display: block;
+  padding: 3px 15px;
+  border-radius: 5px;
+  font-family: ubuntumedium, Arial, sans-serif;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 30px;
+  font-size: 13px; }
+  .button--header {
+    background-color: #e45028; }
+    .button--header:hover {
+      background-color: #c1401e; }
+  .button--review {
+    display: inline-block;
+    background-color: #2f3234; }
+    .button--review:hover {
+      background-color: #1f2122; }
 
 .content {
   width: 940px;
@@ -524,52 +548,41 @@ template {
   align-self: stretch; }
   .page-header__logo {
     display: block; }
-  .page-header__buy {
-    display: block;
-    padding: 3px 15px;
-    background-color: #e45028;
-    border-radius: 5px;
-    font-family: ubuntumedium, Arial, sans-serif;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    line-height: 30px;
-    font-size: 13px; }
-    .page-header__buy:hover {
-      background-color: #c1401e; }
+  .page-header__nav {
+    margin-left: auto; }
 
-.main-nav {
-  margin-left: auto; }
-  .main-nav__items {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-  .main-nav__item {
-    position: relative; }
-    .main-nav__item::after {
-      content: "";
-      display: block;
-      position: absolute;
-      right: 0;
-      top: 18px;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background-color: #fff; }
-    .main-nav__item:last-child::after {
-      content: normal; }
-  .main-nav__link {
+.main-nav__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.main-nav__item {
+  position: relative; }
+  .main-nav__item::after {
+    content: "";
     display: block;
-    padding: 5px 17px;
-    font-family: ubuntumedium, Arial, sans-serif;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    line-height: 30px;
-    font-size: 13px; }
+    position: absolute;
+    right: 0;
+    top: 18px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #fff; }
+  .main-nav__item:last-child::after {
+    content: normal; }
+
+.main-nav__link {
+  display: block;
+  padding: 5px 17px;
+  font-family: ubuntumedium, Arial, sans-serif;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 30px;
+  font-size: 13px; }
 
 .burger-presentation {
   display: -webkit-box;
@@ -599,13 +612,6 @@ template {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
-  .burger-presentation__first-line {
-    margin-bottom: 17px;
-    font-family: gagalinregular, Arial, sans-serif;
-    color: #f9b43b;
-    text-transform: uppercase;
-    line-height: 85px;
-    font-size: 72px; }
   .burger-presentation__second-line {
     font-family: lifehackmedium, Arial, sans-serif;
     color: #fff;
@@ -618,9 +624,10 @@ template {
   list-style: none;
   margin: 0;
   padding: 0;
-  position: absolute;
+  position: fixed;
   top: 90px;
-  right: 451px; }
+  right: 46px;
+  z-index: 100; }
   .screen-switcher__item {
     margin-bottom: 5px; }
   .screen-switcher__link {
@@ -697,7 +704,14 @@ template {
   overflow: hidden; }
   .review__photo {
     display: block;
-    width: 100%; }
+    /*Тут костыль с медиа-запросом, чтобы фото не разъезжались по вертикали при
+  слишком маленькой ширине экрана*/ }
+    @media (min-width: 1420px) {
+      .review__photo {
+        width: 100%; } }
+    @media (max-width: 1420px) {
+      .review__photo {
+        height: 100%; } }
   .review:hover .review__container {
     display: block; }
   .review__container {
@@ -723,16 +737,3 @@ template {
     font-size: 14px;
     color: #fff;
     font-family: ubuntulight, Arial, sans-serif; }
-  .review__detail {
-    display: inline-block;
-    padding: 2px 14px;
-    border-radius: 5px;
-    background-color: #2f3234;
-    line-height: 30px;
-    font-size: 13px;
-    font-family: ubuntumedium, Arial, sans-serif;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase; }
-    .review__detail:hover {
-      background-color: #1f2122; }
