@@ -20,10 +20,22 @@
       margin-bottom: 65px;
       color: #2f3234;
     }
+
+    &--team {
+      color: #f9b43b;
+      margin-bottom: 62px;
+    }
   }
 
   &__scroll-down {
     margin-bottom: 40px;
+  }
+
+  &__team-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
   }
 
   &--greeting {
@@ -31,12 +43,20 @@
     background-image: url(../img/bg-pattern.png), url(../img/video-bg.jpg);
     background-repeat: repeat, no-repeat;
     background-position: center center;
-    background-size: cover;
+    background-size: auto, cover;
   }
 
   &--we-best {
     background-color: #f5f2ed;
     background-image: url(../img/bg-we-best.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  &--team {
+    position: relative;
+    background-image: url(../img/team-bg.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
