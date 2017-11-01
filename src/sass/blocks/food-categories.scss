@@ -1,0 +1,7 @@
+.food-categories {
+  @include list-style;
+  display: flex;
+  //flex-direction: column;
+  height: 100%;
+
+}

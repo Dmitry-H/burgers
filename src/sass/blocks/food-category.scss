@@ -1,0 +1,71 @@
+.food-category {
+  display: flex;
+  height: 100%;
+
+  &__header {
+    margin: 0;
+    line-height: 64px;
+    font-size: 40px;
+    font-family: $gagalinregular;
+    color: #fff;
+    font-weight: normal;
+    white-space: nowrap;
+    transform-origin: center;
+    transform: rotate(-90deg);
+  }
+
+  &__header-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    cursor: pointer;
+
+    &--meat {
+      background: url(../img/bg-meat.jpg) no-repeat center;
+      background-size: cover;
+    }
+
+    &--vegan {
+      background: url(../img/bg-vegan.jpg) no-repeat center;
+      background-size: cover;
+    }
+
+    &--diet {
+      background: url(../img/bg-diet.jpg) no-repeat center;
+      background-size: cover;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(20, 20, 20, 0.7);
+    }
+  }
+
+  &__description {
+    margin: 0;
+    box-sizing: border-box;
+    width: 0;
+    overflow: hidden;
+    line-height: 24px;
+    font-size: 14px;
+    font-family: $ubuntulight;
+    color: #fff;
+    background-color: rgba(47, 50, 52, 0.9);
+  }
+
+  &--visible {
+    .food-category__description {
+      width: 541px;
+      padding: 56px 34px;
+    }
+  }
+}

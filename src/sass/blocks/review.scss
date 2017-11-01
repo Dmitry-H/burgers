@@ -1,20 +1,22 @@
 .review {
   position: relative;
+  min-height: 325px;
   height: 50vh;
   width: 25%;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 0;
+  z-index: 1;
+
+  @for $i from 1 through 8 {
+    &:nth-child(#{$i}) {
+      background-image: url(../img/photo-#{$i}.jpg);
+    }
+  }
 
   &__photo {
-    display: block;
-/*Тут костыль с медиа-запросом, чтобы фото не разъезжались по вертикали при
-  слишком маленькой ширине экрана*/
-    @media (min-width: 1420px) {
-      width: 100%;
-    }
-
-    @media (max-width: 1420px) {
-      height: 100%;
-    }
+    display: none;
   }
 
   &:hover &__container {
@@ -28,6 +30,7 @@
     top: 0;
     bottom: 0;
     background-color: rgba(14, 14, 14, 0.7);
+    z-index: 10;
   }
 
   &__header {

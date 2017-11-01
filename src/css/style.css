@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -451,15 +450,12 @@ template {
     line-height: 85px;
     font-size: 72px;
     font-weight: normal; }
-    .screen__title--greeting {
-      margin-bottom: 17px;
+    .screen__title--yellow {
       color: #f9b43b; }
-    .screen__title--we-best {
-      margin-bottom: 65px;
+    .screen__title--dark {
       color: #2f3234; }
-    .screen__title--team {
-      color: #f9b43b;
-      margin-bottom: 62px; }
+    .screen__title--light {
+      color: #fff; }
   .screen__scroll-down {
     margin-bottom: 40px; }
   .screen__team-overlay {
@@ -467,23 +463,34 @@ template {
     top: 0;
     bottom: 0;
     right: 0; }
+  .screen__menu-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0; }
   .screen--greeting {
     background-color: #000;
     background-image: url(../img/bg-pattern.png), url(../img/video-bg.jpg);
     background-repeat: repeat, no-repeat;
     background-position: center center;
     background-size: auto, cover; }
+    .screen--greeting .screen__title {
+      margin-bottom: 17px; }
   .screen--we-best {
-    background-color: #f5f2ed;
-    background-image: url(../img/bg-we-best.png);
-    background-repeat: no-repeat;
-    background-position: center center;
+    background: #f5f2ed url(../img/bg-we-best.jpg) no-repeat center center;
     background-size: cover; }
+    .screen--we-best .screen__title {
+      margin-bottom: 65px; }
   .screen--team {
     position: relative;
-    background-image: url(../img/team-bg.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
+    background: url(../img/bg-team.jpg) no-repeat center center;
+    background-size: cover; }
+    .screen--team .screen__title {
+      margin-bottom: 62px; }
+  .screen--menu {
+    position: relative;
+    padding: 96px 0 0 95px;
+    background: url(../img/bg-menu.jpg) no-repeat center center;
     background-size: cover; }
   .screen--reviews {
     display: -webkit-box;
@@ -715,19 +722,32 @@ template {
 
 .review {
   position: relative;
+  min-height: 325px;
   height: 50vh;
   width: 25%;
-  overflow: hidden; }
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 0;
+  z-index: 1; }
+  .review:nth-child(1) {
+    background-image: url(../img/photo-1.jpg); }
+  .review:nth-child(2) {
+    background-image: url(../img/photo-2.jpg); }
+  .review:nth-child(3) {
+    background-image: url(../img/photo-3.jpg); }
+  .review:nth-child(4) {
+    background-image: url(../img/photo-4.jpg); }
+  .review:nth-child(5) {
+    background-image: url(../img/photo-5.jpg); }
+  .review:nth-child(6) {
+    background-image: url(../img/photo-6.jpg); }
+  .review:nth-child(7) {
+    background-image: url(../img/photo-7.jpg); }
+  .review:nth-child(8) {
+    background-image: url(../img/photo-8.jpg); }
   .review__photo {
-    display: block;
-    /*Тут костыль с медиа-запросом, чтобы фото не разъезжались по вертикали при
-  слишком маленькой ширине экрана*/ }
-    @media (min-width: 1420px) {
-      .review__photo {
-        width: 100%; } }
-    @media (max-width: 1420px) {
-      .review__photo {
-        height: 100%; } }
+    display: none; }
   .review:hover .review__container {
     display: block; }
   .review__container {
@@ -736,7 +756,8 @@ template {
     position: absolute;
     top: 0;
     bottom: 0;
-    background-color: rgba(14, 14, 14, 0.7); }
+    background-color: rgba(14, 14, 14, 0.7);
+    z-index: 10; }
   .review__header {
     margin: 0;
     margin-bottom: 13px;
@@ -836,3 +857,79 @@ template {
         border-bottom-color: #f9b43b; }
     .employer--active .employer__info {
       height: auto; }
+
+.food-categories {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%; }
+
+.food-category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%; }
+  .food-category__header {
+    margin: 0;
+    line-height: 64px;
+    font-size: 40px;
+    font-family: gagalinregular, Arial, sans-serif;
+    color: #fff;
+    font-weight: normal;
+    white-space: nowrap;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+  .food-category__header-container {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 80px;
+    cursor: pointer; }
+    .food-category__header-container--meat {
+      background: url(../img/bg-meat.jpg) no-repeat center;
+      background-size: cover; }
+    .food-category__header-container--vegan {
+      background: url(../img/bg-vegan.jpg) no-repeat center;
+      background-size: cover; }
+    .food-category__header-container--diet {
+      background: url(../img/bg-diet.jpg) no-repeat center;
+      background-size: cover; }
+    .food-category__header-container::before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(20, 20, 20, 0.7); }
+  .food-category__description {
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 0;
+    overflow: hidden;
+    line-height: 24px;
+    font-size: 14px;
+    font-family: ubuntulight, Arial, sans-serif;
+    color: #fff;
+    background-color: rgba(47, 50, 52, 0.9); }
+  .food-category--visible .food-category__description {
+    width: 541px;
+    padding: 56px 34px; }

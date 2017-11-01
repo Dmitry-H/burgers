@@ -11,19 +11,16 @@
     font-size: 72px;
     font-weight: normal;
 
-    &--greeting {
-      margin-bottom: 17px;
+    &--yellow {
       color: #f9b43b;
     }
 
-    &--we-best {
-      margin-bottom: 65px;
+    &--dark {
       color: #2f3234;
     }
 
-    &--team {
-      color: #f9b43b;
-      margin-bottom: 62px;
+    &--light {
+      color: #fff;
     }
   }
 
@@ -38,27 +35,48 @@
     right: 0;
   }
 
+  &__menu-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+
   &--greeting {
     background-color: #000;
     background-image: url(../img/bg-pattern.png), url(../img/video-bg.jpg);
     background-repeat: repeat, no-repeat;
     background-position: center center;
     background-size: auto, cover;
+
+    .screen__title {
+      margin-bottom: 17px;
+    }
   }
 
   &--we-best {
-    background-color: #f5f2ed;
-    background-image: url(../img/bg-we-best.png);
-    background-repeat: no-repeat;
-    background-position: center center;
+    background: #f5f2ed url(../img/bg-we-best.jpg) no-repeat center center;
     background-size: cover;
+
+    .screen__title {
+      margin-bottom: 65px;
+    }
   }
 
   &--team {
     position: relative;
-    background-image: url(../img/team-bg.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
+    background: url(../img/bg-team.jpg) no-repeat center center;
+    background-size: cover;
+
+    .screen__title {
+      margin-bottom: 62px;
+    }
+  }
+
+  &--menu {
+    position: relative;
+    padding: 96px 0 0 95px;
+    background: url(../img/bg-menu.jpg) no-repeat center center;
     background-size: cover;
   }
 
