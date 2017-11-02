@@ -1,4 +1,5 @@
 .screen {
+  position: relative;
   min-height: 650px;
   height: 100vh;
   box-sizing: border-box;
@@ -42,6 +43,13 @@
     bottom: 0;
   }
 
+  &__contacts {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
   &--greeting {
     background-color: #000;
     background-image: url(../img/bg-pattern.png), url(../img/video-bg.jpg);
@@ -55,8 +63,8 @@
   }
 
   &--we-best {
-    background: #f5f2ed url(../img/bg-we-best.jpg) no-repeat center center;
-    background-size: cover;
+    background-color: #f5f2ed;
+    @include bg-image("bg-we-best.jpg");
 
     .screen__title {
       margin-bottom: 65px;
@@ -65,8 +73,7 @@
 
   &--team {
     position: relative;
-    background: url(../img/bg-team.jpg) no-repeat center center;
-    background-size: cover;
+    @include bg-image("bg-team.jpg");
 
     .screen__title {
       margin-bottom: 62px;
@@ -76,8 +83,7 @@
   &--menu {
     position: relative;
     padding: 96px 0 0 95px;
-    background: url(../img/bg-menu.jpg) no-repeat center center;
-    background-size: cover;
+    @include bg-image("bg-menu.jpg");
   }
 
   &--reviews {
@@ -85,5 +91,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
+  }
+
+  &--contact {
+    @include bg-image("bg-map.jpg");
   }
 }

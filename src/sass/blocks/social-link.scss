@@ -1,0 +1,11 @@
+.social-link {
+
+  &__image {
+    fill: #fff;
+    opacity: 0.3;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

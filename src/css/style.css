@@ -439,6 +439,7 @@ template {
   z-index: 100; }
 
 .screen {
+  position: relative;
   min-height: 650px;
   height: 100vh;
   -webkit-box-sizing: border-box;
@@ -468,6 +469,11 @@ template {
     top: 0;
     right: 0;
     bottom: 0; }
+  .screen__contacts {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0; }
   .screen--greeting {
     background-color: #000;
     background-image: url(../img/bg-pattern.png), url(../img/video-bg.jpg);
@@ -477,7 +483,8 @@ template {
     .screen--greeting .screen__title {
       margin-bottom: 17px; }
   .screen--we-best {
-    background: #f5f2ed url(../img/bg-we-best.jpg) no-repeat center center;
+    background-color: #f5f2ed;
+    background: url(../img/bg-we-best.jpg) no-repeat center center;
     background-size: cover; }
     .screen--we-best .screen__title {
       margin-bottom: 65px; }
@@ -505,6 +512,9 @@ template {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start; }
+  .screen--contact {
+    background: url(../img/bg-map.jpg) no-repeat center center;
+    background-size: cover; }
 
 .button {
   display: block;
@@ -558,6 +568,10 @@ template {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center; }
+  .content--contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
 
 .page-header {
   display: -webkit-box;
@@ -933,3 +947,55 @@ template {
   .food-category--visible .food-category__description {
     width: 541px;
     padding: 56px 34px; }
+
+.contacts {
+  background: url(../img/bg-contacts.jpg) no-repeat center center;
+  background-size: cover;
+  padding: 5px 0; }
+  .contacts__wrapper {
+    width: 50%;
+    line-height: 24px;
+    font-size: 14px; }
+  .contacts__address {
+    display: block;
+    font-family: ubuntulight, Arial, sans-serif;
+    color: #fff; }
+  .contacts__tel {
+    position: relative;
+    padding-left: 20px;
+    display: block;
+    font-family: ubuntubold, Arial, sans-serif;
+    color: #e45028; }
+    .contacts__tel::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 12px;
+      height: 11px;
+      background-image: url("../img/sprite.svg#phone-icon"); }
+  .contacts__socials {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 50%; }
+  .contacts__social-item {
+    margin-right: 20px; }
+    .contacts__social-item:last-child {
+      margin-right: 0; }
+
+.social-link__image {
+  fill: #fff;
+  opacity: 0.3; }
+  .social-link__image:hover {
+    opacity: 1; }
