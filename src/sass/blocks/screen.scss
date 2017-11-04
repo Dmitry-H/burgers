@@ -93,6 +93,14 @@
     align-items: flex-start;
   }
 
+  &--delivery {
+    @include bg-image("bg-delivery.jpg");
+
+    .screen__title {
+      margin-bottom: 69px;
+    }
+  }
+
   &--contact {
     @include bg-image("bg-map.jpg");
   }

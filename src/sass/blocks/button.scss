@@ -1,6 +1,7 @@
 .button {
-  display: block;
+  display: inline-block;
   padding: 3px 15px;
+  border: none;
   border-radius: 5px;
   font-family: $ubuntumedium;
   color: #fff;
@@ -8,8 +9,10 @@
   text-transform: uppercase;
   line-height: 30px;
   font-size: 13px;
+  cursor: pointer;
+  outline: none;
 
-  &--header {
+  &--yellow {
     background-color: #e45028;
 
     &:hover {
@@ -17,12 +20,16 @@
     }
   }
 
-  &--review {
-    display: inline-block;
+  &--dark {
     background-color: #2f3234;
 
     &:hover {
       background-color: #1f2122;
     }
+  }
+
+  &--transparent {
+    background-color: transparent;
+    text-transform: none;
   }
 }

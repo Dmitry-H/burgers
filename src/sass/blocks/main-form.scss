@@ -1,0 +1,131 @@
+.main-form {
+  display: flex;
+  align-items: stretch;
+
+  &__input-column {
+    width: 50%;
+    margin-right: 21px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__input-line {
+    display: flex;
+    margin-bottom: 18px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__input-wrapper {
+    margin-right: 21px;
+    flex: 1;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--triggers {
+      flex: initial;
+    }
+  }
+
+  &__input-label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-family: $ubuntulight;
+    color: #fff;
+
+    &--triggers {
+      margin-bottom: 0;
+      margin-right: 21px;
+      padding-left: 23px;
+      position: relative;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &--radio {
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      &::before {
+        display: block;
+        width: 15px;
+        height: 15px;
+        left: 0;
+        background-color: #fff;
+      }
+
+      &::after {
+        display: none;
+        width: 7px;
+        height: 7px;
+        left: 4px;
+        top: 4px;
+        background-color: #e35028;
+      }
+    }
+
+    &--checkbox {
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+      }
+
+      &::before {
+        display: block;
+        width: 15px;
+        height: 15px;
+        left: 0;
+        top: 0;
+        background-color: #fff;
+      }
+
+      &::after {
+        display: none;
+        width: 11px;
+        height: 9px;
+        left: 2px;
+        top: 3px;
+        background: url(../img/checked.png) no-repeat;
+      }
+    }
+  }
+
+  &__input-data {
+    width: 100%;
+    padding: 8px 5px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-family: $ubuntumedium;
+
+    &--textarea {
+      height: 108px;
+      resize: none;
+    }
+  }
+
+  &__input-trigger {
+    display: none;
+
+    &:checked + .main-form__input-label--triggers::after {
+      display: block;
+    }
+  }
+
+
+}

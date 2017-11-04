@@ -512,29 +512,39 @@ template {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start; }
+  .screen--delivery {
+    background: url(../img/bg-delivery.jpg) no-repeat center center;
+    background-size: cover; }
+    .screen--delivery .screen__title {
+      margin-bottom: 69px; }
   .screen--contact {
     background: url(../img/bg-map.jpg) no-repeat center center;
     background-size: cover; }
 
 .button {
-  display: block;
+  display: inline-block;
   padding: 3px 15px;
+  border: none;
   border-radius: 5px;
   font-family: ubuntumedium, Arial, sans-serif;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   line-height: 30px;
-  font-size: 13px; }
-  .button--header {
+  font-size: 13px;
+  cursor: pointer;
+  outline: none; }
+  .button--yellow {
     background-color: #e45028; }
-    .button--header:hover {
+    .button--yellow:hover {
       background-color: #c1401e; }
-  .button--review {
-    display: inline-block;
+  .button--dark {
     background-color: #2f3234; }
-    .button--review:hover {
+    .button--dark:hover {
       background-color: #1f2122; }
+  .button--transparent {
+    background-color: transparent;
+    text-transform: none; }
 
 .content {
   width: 940px;
@@ -572,6 +582,20 @@ template {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
+  .content--delivery {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
 
 .page-header {
   display: -webkit-box;
@@ -999,3 +1023,97 @@ template {
   opacity: 0.3; }
   .social-link__image:hover {
     opacity: 1; }
+
+.main-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch; }
+  .main-form__input-column {
+    width: 50%;
+    margin-right: 21px; }
+    .main-form__input-column:last-child {
+      margin-right: 0; }
+  .main-form__input-line {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 18px; }
+    .main-form__input-line:last-child {
+      margin-bottom: 0; }
+  .main-form__input-wrapper {
+    margin-right: 21px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1; }
+    .main-form__input-wrapper:last-child {
+      margin-right: 0; }
+    .main-form__input-wrapper--triggers {
+      -webkit-box-flex: initial;
+      -ms-flex: initial;
+      flex: initial; }
+  .main-form__input-label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-family: ubuntulight, Arial, sans-serif;
+    color: #fff; }
+    .main-form__input-label--triggers {
+      margin-bottom: 0;
+      margin-right: 21px;
+      padding-left: 23px;
+      position: relative; }
+      .main-form__input-label--triggers:last-child {
+        margin-right: 0; }
+    .main-form__input-label--radio::before, .main-form__input-label--radio::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%; }
+    .main-form__input-label--radio::before {
+      display: block;
+      width: 15px;
+      height: 15px;
+      left: 0;
+      background-color: #fff; }
+    .main-form__input-label--radio::after {
+      display: none;
+      width: 7px;
+      height: 7px;
+      left: 4px;
+      top: 4px;
+      background-color: #e35028; }
+    .main-form__input-label--checkbox::before, .main-form__input-label--checkbox::after {
+      content: '';
+      position: absolute; }
+    .main-form__input-label--checkbox::before {
+      display: block;
+      width: 15px;
+      height: 15px;
+      left: 0;
+      top: 0;
+      background-color: #fff; }
+    .main-form__input-label--checkbox::after {
+      display: none;
+      width: 11px;
+      height: 9px;
+      left: 2px;
+      top: 3px;
+      background: url(../img/checked.png) no-repeat; }
+  .main-form__input-data {
+    width: 100%;
+    padding: 8px 5px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-family: ubuntumedium, Arial, sans-serif; }
+    .main-form__input-data--textarea {
+      height: 108px;
+      resize: none; }
+  .main-form__input-trigger {
+    display: none; }
+    .main-form__input-trigger:checked + .main-form__input-label--triggers::after {
+      display: block; }
