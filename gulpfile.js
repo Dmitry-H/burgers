@@ -2,7 +2,9 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync'),
 	sass = require("gulp-sass"),
 	cleanCSS = require("gulp-clean-css"),
-	autoprefixer = require("gulp-autoprefixer");
+	autoprefixer = require("gulp-autoprefixer"),
+	imagemin = require("gulp-imagemin"),
+	cssunit = require("gulp-css-unit");
 
 gulp.task('watch', ['browserSync', 'sass'], function(){
     gulp.watch('src/sass/**/*.scss', ['sass']);
@@ -27,7 +29,17 @@ gulp.task("sass", function(){
 			browsers: ["last 2 versions"],
 			cascade: false
 		}))
+		.pipe(cssunit({
+			type: "px-to-rem",
+			rootSize: 16
+		}))
 		// .pipe(cleanCSS())
 		.pipe(gulp.dest("src/css"))
 		.pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task("imagemin", function() {
+	gulp.src("src/img/*")
+		.pipe(imagemin())
+		.pipe(gulp.dest("dist/img"))
 });

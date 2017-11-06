@@ -3,6 +3,9 @@
   height: 100%;
 
   &__header {
+    /*position: absolute;
+    top: 0;
+    left: -30px;*/
     margin: 0;
     line-height: 64px;
     font-size: 40px;
@@ -11,6 +14,7 @@
     font-weight: normal;
     white-space: nowrap;
     transform-origin: center;
+    //transform-origin: left top;
     transform: rotate(-90deg);
   }
 
@@ -22,6 +26,11 @@
     align-items: center;
     width: 80px;
     cursor: pointer;
+
+/*    @include tablet {
+      justify-content: flex-end;
+      padding-bottom: 10px;
+    }*/
 
     &--meat {
       background: url(../img/bg-meat.jpg) no-repeat center;
@@ -69,3 +78,8 @@
     }
   }
 }
+/*
+
+.tmp {
+  position: relative;
+}*/

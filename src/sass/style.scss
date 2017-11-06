@@ -1,4 +1,5 @@
 @import "global/normalize";
+@import "global/tags";
 //@import "global/fonts";
 @import "mixins";
 @import "variables";
@@ -20,7 +21,6 @@
 @import "blocks/features";
 @import "blocks/review";
 
-@import "blocks/team-container";
 @import "blocks/team";
 @import "blocks/employer";
 
@@ -31,3 +31,4 @@
 @import "blocks/social-link";
 
 @import "blocks/main-form";
+@import "blocks/hamburger-menu";

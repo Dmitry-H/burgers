@@ -3,7 +3,11 @@
   padding-top: 8px;
   flex-direction: row;
   align-items: center;
-  align-self: stretch;
+  //align-self: stretch;
+
+  @include phone {
+    padding: 8px 10px 0;
+  }
 
   &__logo {
     display: block;
@@ -11,5 +15,14 @@
 
   &__nav {
     margin-left: auto;
+  }
+
+  &__hamburger-menu {
+    display: none;
+    margin-left: 31px;
+
+    @include tablet {
+      display: block;
+    }
   }
 }

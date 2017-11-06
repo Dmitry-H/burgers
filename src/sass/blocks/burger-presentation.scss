@@ -1,25 +1,52 @@
 .burger-presentation {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: row;
-  //margin-bottom: 99px;
+
+  @include tablet {
+    margin-top: -80px;
+    width: 472px;
+    flex-direction: column;
+    text-align: center;
+  }
 
   &__photo-wrapper {
-    padding-left: 51px;
+    //display: flex;
+    flex-shrink: 0;
+    //justify-content: center;
     margin-right: 15px;
     background-image: url(../img/drops.svg);
-    background-position: 15px 66px;
+    background-position: right 37%;
     background-repeat: no-repeat;
+    background-size: 100% auto;
+
+    @include tablet {
+      margin-right: 0;
+      margin-bottom: 28px;
+    }
+
+    @include phone {
+      width: 366px;
+    }
   }
 
   &__photo {
     display: block;
+    max-width: 100%;
+    //flex-shrink: 1;
   }
 
   &__description {
-    padding: 135px 0 0;
+    //padding: 135px 0 0;
+    //flex: 1;
+    padding-top: 70px;
     display: flex;
     flex-direction: column;
+
+    @include tablet {
+      padding-top: 0;
+    }
   }
 
   &__second-line {
@@ -28,6 +55,9 @@
     text-transform: lowercase;
     line-height: 60px;
     font-size: 65px;
-    letter-spacing: -2px;
+
+    @include phone {
+      font-size: 54px;
+    }
   }
 }

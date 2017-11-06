@@ -1,4 +1,7 @@
 .main-nav {
+  @include tablet {
+    display: none;
+  }
 
   &__items {
     @include list-style;

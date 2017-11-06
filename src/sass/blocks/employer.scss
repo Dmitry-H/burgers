@@ -1,7 +1,16 @@
 .employer {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 12px;
 
+  @include tablet {
+    width: 330px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+
   &__name {
+    display: inline-block;
     position: relative;
     margin: 0;
     margin-bottom: 10px;
@@ -13,6 +22,10 @@
     font-weight: normal;
     cursor: pointer;
 
+    @include tablet {
+      font-size: 25px;
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -21,7 +34,6 @@
       display: block;
       border: 5px solid transparent;
       border-top-color: #f9b43b;
-      //border-bottom-color: #f9b43b;
     }
   }
 
@@ -29,6 +41,12 @@
     display: flex;
     height: 0;
     overflow: hidden;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   }
 
   &__photo-wrapper {
@@ -42,15 +60,22 @@
     height: 100px;
     overflow: hidden;
     border-radius: 50%;
+
+    @include tablet {
+      margin-bottom: 25px;
+    }
   }
 
   &__photo {
-
+    flex-shrink: 0;
   }
 
   &__description-wrapper {
-    //padding-top: 5px;
     width: 215px;
+
+    @include tablet {
+      width: 330px;
+    }
   }
 
   &__position {

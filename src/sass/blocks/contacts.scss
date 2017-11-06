@@ -1,11 +1,25 @@
 .contacts {
-  @include bg-image("bg-contacts.jpg");
+  display: flex;
   padding: 5px 0;
+
+  @include phone {
+    padding: 16px 0;
+    flex-direction: column;
+    align-items: center;
+  }
 
   &__wrapper {
     width: 50%;
     line-height: 24px;
     font-size: 14px;
+
+    @include phone {
+      margin-bottom: 8px;
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__address {
@@ -39,6 +53,10 @@
     align-items: center;
     @include list-style;
     width: 50%;
+
+    @include phone {
+      justify-content: center;
+    }
   }
 
   &__social-item {

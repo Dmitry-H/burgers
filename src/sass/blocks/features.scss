@@ -4,17 +4,45 @@
   align-items: baseline;
   justify-content: space-between;
 
+  @include phone {
+    flex-direction: column;
+    width: 100%;
+  }
+
   &__item {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     flex-basis: 300px;
+    //flex: 1;
+
+    @include phone {
+      margin-bottom: 42px;
+      flex-basis: auto;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: left;
+    }
   }
 
   &__image {
     display: block;
     margin-bottom: 37px;
+
+    @include phone {
+      margin-bottom: 0;
+      margin-left: 18px;
+    }
+  }
+
+  &__info {
+
+    @include phone {
+      width: 319px;
+    }
   }
 
   &__name {
