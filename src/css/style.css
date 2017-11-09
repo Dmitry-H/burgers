@@ -1307,8 +1307,8 @@ html {
       left: 0;
       top: 0.375rem;
       width: 0.75rem;
-      height: 0.6875rem;
-      background-image: url("../img/sprite.svg#phone-icon"); }
+      height: 0.75rem;
+      background: url("../img/sprite.svg#phone-icon") no-repeat; }
   .contacts__socials {
     display: -webkit-box;
     display: -ms-flexbox;
