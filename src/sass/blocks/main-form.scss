@@ -112,6 +112,13 @@
         background-color: #e35028;
         border-radius: 50%;
       }
+
+      @include very-small {
+        &::before {
+          width: 6px;
+          height: 6px;
+        }
+      }
     }
 
     &--checkbox {
@@ -126,7 +133,6 @@
   &__input-data {
     width: 100%;
     flex-grow: 1;
-    //flex: 1 1 100%;
     padding: 8px 5px;
     box-sizing: border-box;
     outline: none;
