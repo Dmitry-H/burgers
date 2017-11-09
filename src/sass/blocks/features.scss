@@ -36,6 +36,11 @@
       margin-bottom: 0;
       margin-left: 18px;
     }
+
+    @include very-small {
+      margin-left: 0;
+      margin-right: 20px;
+    }
   }
 
   &__info {

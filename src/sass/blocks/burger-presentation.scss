@@ -3,8 +3,10 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  max-width: 100%;
 
   @include tablet {
+    margin: 0 auto;
     margin-top: -80px;
     width: 472px;
     flex-direction: column;
@@ -12,10 +14,9 @@
   }
 
   &__photo-wrapper {
-    //display: flex;
     flex-shrink: 0;
-    //justify-content: center;
     margin-right: 15px;
+    max-width: 100%;
     background-image: url(../img/drops.svg);
     background-position: right 37%;
     background-repeat: no-repeat;
@@ -34,12 +35,10 @@
   &__photo {
     display: block;
     max-width: 100%;
-    //flex-shrink: 1;
   }
 
   &__description {
-    //padding: 135px 0 0;
-    //flex: 1;
+    max-width: 100%;
     padding-top: 70px;
     display: flex;
     flex-direction: column;
@@ -58,6 +57,10 @@
 
     @include phone {
       font-size: 54px;
+    }
+
+    @include very-small {
+      font-size: 40px;
     }
   }
 }

@@ -19,7 +19,8 @@
     min-height: initial;
     height: 25%;
     width: 50%;
-    background-position: center -40px;
+    //background-position: center -40px;
+    background-position: center;
   }
 
   &__photo {
@@ -43,6 +44,10 @@
       padding: 27px 50px;
       text-align: center;
     }
+
+    @include phone {
+      padding: 5px 5px;
+    }
   }
 
   &__header {
@@ -63,5 +68,12 @@
     font-size: 14px;
     color: #fff;
     font-family: $ubuntulight;
+
+    @include phone {
+      font-size: 10px;
+      max-height: 50%;
+      overflow: hidden;
+      //text-overflow: clip;
+    }
   }
 }

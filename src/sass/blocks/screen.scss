@@ -1,5 +1,6 @@
 .screen {
   position: relative;
+  min-width: 320px - 17px;
   min-height: 650px;
   height: 100vh;
   box-sizing: border-box;
@@ -13,9 +14,15 @@
   }
 
   &__burger-presentation {
+    max-width: 100%;
+
     @include phone {
       margin-bottom: 70px;
     }
+
+    /*@include very-small {
+      margin-bottom: 15px;
+    }*/
   }
 
   &__title {
@@ -27,6 +34,10 @@
     font-weight: normal;
 
     @include phone {
+      font-size: 50px;
+    }
+
+    @include very-small {
       font-size: 50px;
     }
 
@@ -65,7 +76,8 @@
     }
 
     @include phone {
-      padding-top: 43px;
+      padding: 43px 10px 0;
+      //padding-top: 43px;
     }
   }
 
@@ -108,6 +120,10 @@
         line-height: normal;
         font-size: 63px;
       }
+
+      /*@include very-small {
+        font-size: 45px;
+      }*/
     }
   }
 
@@ -194,13 +210,12 @@
       padding-top: 56px;
     }
 
-
     .screen__title {
       margin-bottom: 69px;
 
       @include phone {
         margin-bottom: 25px;
-        padding: 0 20px;
+        padding: 0 30%;
         text-align: center;
         line-height: 60px;
       }
