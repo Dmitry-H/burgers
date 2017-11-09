@@ -1,12 +1,8 @@
 @import "global/normalize";
 @import "global/tags";
-//@import "global/fonts";
+@import "global/fonts";
 @import "mixins";
 @import "variables";
-
-@import "../fonts/ubuntu/stylesheet";
-@import "../fonts/gagalin/stylesheet";
-@import "../fonts/lifehack/stylesheet";
 
 @import "blocks/main-wrapper";
 @import "blocks/screen";

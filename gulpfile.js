@@ -4,7 +4,10 @@ var gulp = require('gulp'),
 	cleanCSS = require("gulp-clean-css"),
 	autoprefixer = require("gulp-autoprefixer"),
 	imagemin = require("gulp-imagemin"),
-	cssunit = require("gulp-css-unit");
+	cssunit = require("gulp-css-unit"),
+	clean = require("gulp-clean"),
+	newer = require("gulp-newer"),
+    runSequence = require("run-sequence");
 
 gulp.task('watch', ['browserSync', 'sass'], function(){
     gulp.watch('src/sass/**/*.scss', ['sass']);
@@ -34,12 +37,46 @@ gulp.task("sass", function(){
 			rootSize: 16
 		}))
 		// .pipe(cleanCSS())
-		.pipe(gulp.dest("src/css"))
+		.pipe(gulp.dest("./src/css"))
 		.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task("imagemin", function() {
-	gulp.src("src/img/*")
+gulp.task("build", function () {
+	runSequence("clean", ["images", "fonts", "styles", "pages"])
+});
+
+gulp.task("images", function() {
+	gulp.src("src/img/**/*.*")
+		.pipe(newer("./dist/img"))
 		.pipe(imagemin())
-		.pipe(gulp.dest("dist/img"))
+		.pipe(gulp.dest("./dist/img"))
+});
+
+gulp.task("fonts", function () {
+	gulp.src("./src/fonts/**/*.*")
+		.pipe(gulp.dest("./dist/fonts"))
+});
+
+gulp.task("styles", function () {
+    gulp.src("src/sass/style.scss")
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({
+            browsers: ["last 2 versions"],
+            cascade: false
+        }))
+        .pipe(cssunit({
+            type: "px-to-rem",
+            rootSize: 16
+        }))
+        .pipe(gulp.dest("./dist/css"))
+});
+
+gulp.task("pages", function () {
+    gulp.src("./src/*.html")
+        .pipe(gulp.dest("./dist"))
+});
+
+gulp.task("clean", function () {
+    gulp.src(["./dist/**/*.*", "!./dist/img", "!./dist/img/**/*.*"], {read: false})
+        .pipe(clean())
 });
