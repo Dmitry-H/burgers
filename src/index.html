@@ -8,6 +8,32 @@
 </head>
 <body>
 <main class="main-wrapper">
+    <div id="menu" class="main-wrapper__hamburger-menu">
+        <div class="hamburger-menu">
+            <img src="./img/logo.svg" alt="Mr. Burger" class="hamburger-menu__logo">
+            <a href="#" id="menu-close" class="hamburger-menu__close">Закрыть</a>
+            <ul class="hamburger-menu__list">
+                <li class="hamburger-menu__item">
+                    <a href="#" class="hamburger-menu__link">Почему мы</a>
+                </li>
+                <li class="hamburger-menu__item">
+                    <a href="#" class="hamburger-menu__link">Меню</a>
+                </li>
+                <li class="hamburger-menu__item">
+                    <a href="#" class="hamburger-menu__link">Советы</a>
+                </li>
+                <li class="hamburger-menu__item">
+                    <a href="#" class="hamburger-menu__link">Кто мы</a>
+                </li>
+                <li class="hamburger-menu__item">
+                    <a href="#" class="hamburger-menu__link">Свяжитесь с нами</a>
+                </li>
+                <li class="hamburger-menu__item">
+                    <a href="#" class="hamburger-menu__link">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </div>
     <section class="screen  screen--greeting">
         <div class="screen__page-header">
             <div class="content">
@@ -42,8 +68,8 @@
                     <div class="page-header__buy">
                         <a href="#" class="button  button--yellow">Заказать</a>
                     </div>
-                    <a href="#" class="page-header__hamburger-menu">
-                        <span class="hamburger-menu"></span>
+                    <a href="#" id="menu-open" class="page-header__hamburger-menu">
+                        <span class="hamburger-icon"></span>
                     </a>
                 </header>
             </div>
@@ -469,5 +495,6 @@
         </ul>
     </div>
 </main>
+<script src="./js/script.js"></script>
 </body>
 </html>

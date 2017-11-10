@@ -1,0 +1,25 @@
+.hamburger-icon {
+  margin: 9px 0;
+  position: relative;
+
+  &, &::before, &::after {
+    display: block;
+    width: 24px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 3px;
+  }
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+  }
+
+  &::before {
+    top: -9px;
+  }
+
+  &::after {
+    bottom: -9px;
+  }
+}

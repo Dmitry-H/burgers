@@ -1,25 +1,96 @@
 .hamburger-menu {
-  margin: 9px 0;
+  padding-top: 269px;
   position: relative;
+  height: 100%;
+  background-color: rgba(#2f3234, 0.99);
 
-  &, &::before, &::after {
-    display: block;
-    width: 24px;
-    height: 4px;
-    background-color: #fff;
-    border-radius: 3px;
+  @include phone {
+    padding-top: 187px;
   }
 
-  &::before, &::after {
-    content: '';
+  &__logo {
     position: absolute;
+    left: 22px;
+    top: 10px;
   }
 
-  &::before {
-    top: -9px;
+  &__close {
+    display: block;
+    position: absolute;
+    top: 32px;
+    right: 35px;
+    width: 18px;
+    height: 18px;
+    font-size: 0;
+
+    @include phone {
+      right: 20px;
+    }
+
+    &::before, &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 8px;
+      left: -3px;
+      width: 24px;
+      height: 3px;
+      background-color: #c1c2c2;
+      border-radius: 3px;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
   }
 
-  &::after {
-    bottom: -9px;
+  &__list {
+    @include list-style;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
+  &__item {
+    position: relative;
+    margin-bottom: 24px;
+    padding-bottom: 29px;
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 7px;
+      height: 7px;
+      background-color: #fff;
+      border-radius: 50%;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 24px;
+    font-family: $ubunturegular;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+
 }
