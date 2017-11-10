@@ -19,7 +19,6 @@
     min-height: initial;
     height: 25%;
     width: 50%;
-    //background-position: center -40px;
     background-position: center;
   }
 
@@ -28,17 +27,20 @@
   }
 
   &:hover &__container {
-    display: block;
+    //display: block;
+    opacity: 1;
   }
 
   &__container {
-    display: none;
+    //display: none;
     padding: 41px 20px;
     position: absolute;
     top: 0;
     bottom: 0;
     background-color: rgba(14, 14, 14, 0.7);
     z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s;
 
     @include tablet {
       padding: 27px 50px;

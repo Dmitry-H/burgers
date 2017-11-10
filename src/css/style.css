@@ -688,7 +688,9 @@ html {
   line-height: 1.875rem;
   font-size: 0.8125rem;
   cursor: pointer;
-  outline: none; }
+  outline: none;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s; }
   .button--yellow {
     background-color: #e45028; }
     .button--yellow:hover {
@@ -1002,15 +1004,17 @@ html {
   .review__photo {
     display: none; }
   .review:hover .review__container {
-    display: block; }
+    opacity: 1; }
   .review__container {
-    display: none;
     padding: 2.5625rem 1.25rem;
     position: absolute;
     top: 0;
     bottom: 0;
     background-color: rgba(14, 14, 14, 0.7);
-    z-index: 10; }
+    z-index: 10;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
     @media (max-width: 60rem) {
       .review__container {
         padding: 1.6875rem 3.125rem;
