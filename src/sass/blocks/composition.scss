@@ -3,8 +3,14 @@
   flex-direction: column;
   align-items: center;
   padding: 12px 23px;
-  background-color: #f08c33;
+  background-color: #e35028;
+  opacity: 0.4;
   border-radius: 5px;
+  cursor: pointer;
+
+  &--active {
+    opacity: 1;
+  }
 
   &__image {
     margin-bottom: 4px;
