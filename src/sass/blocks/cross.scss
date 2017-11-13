@@ -1,0 +1,32 @@
+.cross {
+  display: block;
+  width: 18px;
+  height: 18px;
+  font-size: 0;
+
+  &::before, &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: -3px;
+    width: 24px;
+    height: 3px;
+    background-color: #c1c2c2;
+    border-radius: 3px;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &--orange {
+    &::before, &::after {
+      background-color: #eb8262;
+    }
+  }
+}

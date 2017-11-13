@@ -1,6 +1,7 @@
 .content {
   width: 940px;
   margin: 0 auto;
+  position: relative;
 
   @include tablet {
     width: 720px;

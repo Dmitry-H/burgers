@@ -1,0 +1,23 @@
+.composition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 23px;
+  background-color: #f08c33;
+  border-radius: 5px;
+
+  &__image {
+    margin-bottom: 4px;
+    fill: #fff;
+    height: 46px;
+    width: 42px;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-family: $gagalinregular;
+    color: #fff;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+}

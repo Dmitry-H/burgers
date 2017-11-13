@@ -160,6 +160,24 @@
     }
   }
 
+  &--burgers {
+    background-image: linear-gradient(to top, #f9b43b 0%, #eb8c38 48%, #f9b43b 74%, #f9b43b 100%);
+
+    .screen__title {
+      margin-bottom: 39px;
+      line-height: 60px;
+
+      @include tablet {
+        padding: 0 186px;
+      }
+
+      @include phone {
+        padding: 0 94px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
   &--team {
     position: relative;
     @include bg-image("bg-team.jpg");

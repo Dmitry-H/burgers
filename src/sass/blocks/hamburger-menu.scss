@@ -15,7 +15,15 @@
   }
 
   &__close {
-    display: block;
+    position: absolute;
+    top: 32px;
+    right: 35px;
+
+    @include phone {
+      right: 20px;
+    }
+
+/*    display: block;
     position: absolute;
     top: 32px;
     right: 35px;
@@ -45,7 +53,7 @@
 
     &::after {
       transform: rotate(-45deg);
-    }
+    }*/
   }
 
   &__list {

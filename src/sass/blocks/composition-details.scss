@@ -1,0 +1,53 @@
+.composition-details {
+  position: relative;
+  padding: 14px 18px;
+  background-color: rgba(#fff, 0.9);
+  border-radius: 5px;
+  visibility: hidden;
+
+  &--visible {
+    visibility: visible;
+  }
+
+  &__close {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 21px;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__cell {
+    padding: 4px 0;
+    font-size: 14px;
+    color: #000;
+
+
+    &:nth-child(1) {
+      text-align: center;
+    }
+
+    &:nth-child(2) {
+      padding-left: 21px;
+      padding-right: 60px;
+      text-align: left;
+      font-family: $ubuntumedium;
+    }
+
+    &:nth-child(3) {
+      font-family: $ubuntulight;
+      text-align: right;
+
+      @include tablet {
+        padding-right: 52px;
+      }
+
+      @include phone {
+        padding-right: 95px;
+      }
+    }
+  }
+}
