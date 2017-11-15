@@ -1,4 +1,4 @@
-.employer {
+.employee {
   display: flex;
   flex-direction: column;
   margin-bottom: 12px;
@@ -39,8 +39,10 @@
 
   &__info {
     display: flex;
-    height: 0;
+    //height: 0;
+    max-height: 0;
     overflow: hidden;
+    //transition: max-height 0.5s linear 0s;
 
     @include tablet {
       flex-direction: column;
@@ -98,7 +100,7 @@
   &--active {
     margin-bottom: 34px;
 
-    .employer {
+    .employee {
       &__name {
         color: #f9b43b;
 
@@ -110,7 +112,9 @@
       }
 
       &__info {
-        height: auto;
+        //height: auto;
+        max-height: 500px;
+
       }
     }
   }

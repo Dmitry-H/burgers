@@ -1,7 +1,8 @@
 .food-categories {
   @include list-style;
   display: flex;
-  //flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
   height: 100%;
-
+  //width: 100%;
 }
