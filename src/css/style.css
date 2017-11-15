@@ -1122,7 +1122,9 @@ html {
     font-family: gagalinregular, Arial, sans-serif;
     color: #fff;
     font-weight: normal;
-    cursor: pointer; }
+    cursor: pointer;
+    -webkit-transition: color 0s step-start;
+    transition: color 0s step-start; }
     @media (max-width: 960px) {
       .employee__name {
         font-size: 25px; } }
@@ -1139,7 +1141,9 @@ html {
     display: -ms-flexbox;
     display: flex;
     max-height: 0;
-    overflow: hidden; }
+    overflow: hidden;
+    -webkit-transition: max-height 0.5s linear;
+    transition: max-height 0.5s linear; }
     @media (max-width: 960px) {
       .employee__info {
         -webkit-box-orient: vertical;
@@ -1194,7 +1198,9 @@ html {
   .employee--active {
     margin-bottom: 34px; }
     .employee--active .employee__name {
-      color: #f9b43b; }
+      color: #f9b43b;
+      -webkit-transition: all 0s step-start;
+      transition: all 0s step-start; }
       .employee--active .employee__name::before {
         top: 8px;
         border-top-color: transparent;

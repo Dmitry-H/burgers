@@ -10,7 +10,6 @@ window.onload = function() {
 
     addEvents(document.getElementsByClassName("employee__name"));
     addEvents(document.getElementsByClassName("food-category__header-container"));
-    // addEvents();
 
     let closeElements = document.getElementsByClassName("food-category__close");
     for (let i = 0; i < closeElements.length; i++) {

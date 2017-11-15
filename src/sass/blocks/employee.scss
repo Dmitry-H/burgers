@@ -21,6 +21,7 @@
     color: #fff;
     font-weight: normal;
     cursor: pointer;
+    transition: color 0s step-start;
 
     @include tablet {
       font-size: 25px;
@@ -42,7 +43,7 @@
     //height: 0;
     max-height: 0;
     overflow: hidden;
-    //transition: max-height 0.5s linear 0s;
+    transition: max-height 0.5s linear;
 
     @include tablet {
       flex-direction: column;
@@ -103,6 +104,7 @@
     .employee {
       &__name {
         color: #f9b43b;
+        transition: all 0s step-start;
 
         &::before {
           top: 8px;
