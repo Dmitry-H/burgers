@@ -21,7 +21,10 @@
     color: #fff;
     font-weight: normal;
     cursor: pointer;
-    transition: color 0s step-start;
+
+    &:hover + div {
+      max-height: 500px;
+    }
 
     @include tablet {
       font-size: 25px;
@@ -40,10 +43,10 @@
 
   &__info {
     display: flex;
+    transition: max-height 5s linear;
     //height: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s linear;
 
     @include tablet {
       flex-direction: column;
@@ -98,13 +101,12 @@
     color: #fff;
   }
 
-  &--active {
+/*  &--active {
     margin-bottom: 34px;
 
     .employee {
       &__name {
         color: #f9b43b;
-        transition: all 0s step-start;
 
         &::before {
           top: 8px;
@@ -114,10 +116,12 @@
       }
 
       &__info {
+        //animation: show-employee 1s 2s;
         //height: auto;
+        //transition: 5s;
         max-height: 500px;
-
+        //transition: max-height 5s linear 0s;
       }
     }
-  }
+  }*/
 }

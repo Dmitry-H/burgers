@@ -29,6 +29,7 @@
   &:hover &__container {
     //display: block;
     opacity: 1;
+    visibility: visible;
   }
 
   &__container {
@@ -40,6 +41,7 @@
     background-color: rgba(14, 14, 14, 0.7);
     z-index: 10;
     opacity: 0;
+    visibility: hidden;
     transition: opacity 0.3s;
 
     @include tablet {
@@ -61,6 +63,10 @@
     text-transform: uppercase;
     font-family: $gagalinregular;
     font-weight: normal;
+
+    @include phone {
+      font-size: 28px;
+    }
   }
 
   &__text {
@@ -72,10 +78,25 @@
     font-family: $ubuntulight;
 
     @include phone {
-      font-size: 10px;
+      display: none;
+      /*font-size: 10px;
       max-height: 50%;
-      overflow: hidden;
+      overflow: hidden;*/
       //text-overflow: clip;
+    }
+  }
+
+  &__detail {
+    @include phone {
+      display: none;
+    }
+  }
+
+  &__detail-phone {
+    display: none;
+
+    @include phone {
+      display: block;
     }
   }
 }

@@ -32,10 +32,10 @@ gulp.task("sass", function(){
 			browsers: ["last 2 versions"],
 			cascade: false
 		}))
-/*		.pipe(cssunit({
+		.pipe(cssunit({
          type: "px-to-rem",
          rootSize: 16
-         }))*/
+         }))
 		// .pipe(cleanCSS())
 		.pipe(gulp.dest("./src/css"))
 		.pipe(browserSync.reload({stream: true}));
