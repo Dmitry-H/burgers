@@ -1,4 +1,9 @@
 @keyframes show-employee {
-  from {height: 0}
-  to {height: auto}
+  from {max-height: 0}
+  to {max-height: 500px}
+}
+
+@keyframes hide-employee {
+  from {max-height: 500px}
+  to {max-height: 0}
 }

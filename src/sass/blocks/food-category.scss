@@ -64,16 +64,29 @@
     }
   }
 
-  &__description {
-    margin: 0;
-    box-sizing: border-box;
+  &__description-container {
     width: 0;
     overflow: hidden;
+    transition: width 0.5s;
+
+
+  }
+
+  &__description {
+    margin: 0;
+    padding: 56px 34px;
+    width: 541px;
+    height: 100%;
+    box-sizing: border-box;
     line-height: 24px;
     font-size: 14px;
     font-family: $ubuntulight;
     color: #fff;
     background-color: rgba(47, 50, 52, 0.9);
+
+    @include phone {
+      max-width: 400px;
+    }
   }
 
   &__close {
@@ -98,7 +111,11 @@
       }
     }
 
-    .food-category__description {
+    &__description-container {
+
+    }
+
+/*    .food-category__description {
       width: 541px;
       padding: 56px 34px;
 
@@ -106,6 +123,6 @@
         width: auto;
         max-width: 400px;
       }
-    }
+    }*/
   }
 }

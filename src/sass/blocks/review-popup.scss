@@ -1,0 +1,35 @@
+.review-popup {
+  position: relative;
+  padding: 25px 20px;
+  width: 472px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 5px;
+
+  @include phone {
+    width: 460px;
+  }
+
+  &__header {
+    display: block;
+    margin-bottom: 23px;
+    font-size: 14px;
+    font-family: $gagalinregular;
+    color: #2f3234;
+    font-weight: normal;
+  }
+
+  &__content {
+    margin: 0;
+    line-height: 24px;
+    font-size: 14px;
+    font-family: $ubuntulight;
+    color: #2f3234;
+  }
+
+  &__close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+  }
+}

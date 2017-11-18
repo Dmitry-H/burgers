@@ -22,9 +22,9 @@
     font-weight: normal;
     cursor: pointer;
 
-    &:hover + div {
+/*    &:hover + div {
       max-height: 500px;
-    }
+    }*/
 
     @include tablet {
       font-size: 25px;
@@ -41,12 +41,18 @@
     }
   }
 
+  &__info-container {
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
   &__info {
     display: flex;
-    transition: max-height 5s linear;
-    //height: 0;
-    max-height: 0;
-    overflow: hidden;
+    padding-bottom: 34px;
+    //transition: max-height 5s linear;
+    //max-height: 0;
+    //animation: hide-employee 1s 0s;
 
     @include tablet {
       flex-direction: column;
@@ -101,8 +107,8 @@
     color: #fff;
   }
 
-/*  &--active {
-    margin-bottom: 34px;
+  &--active {
+    //margin-bottom: 34px;
 
     .employee {
       &__name {
@@ -115,13 +121,17 @@
         }
       }
 
+      &__info-container {
+        height: auto;
+      }
+
       &__info {
-        //animation: show-employee 1s 2s;
+        //animation: show-employee 1s 0s;
         //height: auto;
         //transition: 5s;
-        max-height: 500px;
+        //max-height: 500px;
         //transition: max-height 5s linear 0s;
       }
     }
-  }*/
+  }
 }

@@ -1,12 +1,7 @@
 .hamburger-menu {
   padding-top: 269px;
-  //position: relative;
+  position: relative;
   height: 100%;
-  //background-color: rgba(#2f3234, 0.99);
-
-  position: fixed;
-  left: 0;
-  right: 0;
   width: 100%;
 
   @include phone {

@@ -2,41 +2,46 @@
  * Created by Dmitry on 11.11.2017.
  */
 window.onload = function() {
-    document.getElementById("menu-open").addEventListener("click", showMenu);
-    document.getElementById("menu-close").addEventListener("click", hideMenu);
+
+    $("#menu-open").on("click", showMenu);
+    $("#menu-close").on("click", hideMenu);
 
     document.getElementById("composition-open").addEventListener("mouseenter", showComposition);
     document.getElementById("composition-open").addEventListener("mouseleave", hideComposition);
 
-    addEvents(document.getElementsByClassName("employee__name"));
-    addEvents(document.getElementsByClassName("food-category__header-container"));
+    let employeeData = {
+        activeClass: "employee--active",
+        containerClass: "employee__info-container",
+        contentClass: "employee__info",
+        sideSize: "height"
+    };
 
-    let closeElements = document.getElementsByClassName("food-category__close");
-    for (let i = 0; i < closeElements.length; i++) {
-        closeElements[i].addEventListener("click", closeCurrentElement);
-    }
+    let menuData = {
+        activeClass: "food-category--active",
+        containerClass: "food-category__description-container",
+        contentClass: "food-category__description",
+        sideSize: "width"
+    };
 
-    /*    window.addEventListener("keypress", function (e) {
-        if (e.keyCode === 27) {
-            hideMenu(e);
-        }
-    });*/
+    $(".employee__name").on("click", employeeAcco.bind(null, employeeData));
+    $(".food-category__header-container").on("click", employeeAcco.bind(null, menuData));
+    $(".food-category__close").on("click", employeeAcco.bind(null, menuData));
+
+    $(".review__detail").on("click", showReview);
+    $(".review__detail-phone").on("click", showReview);
+    $(".review-popup__close").on("click", hideReview);
 };
-
-function addEvents(elements) {
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].addEventListener("click", acco.bind(null, elements));
-    }
-}
 
 function showMenu(e) {
     e.preventDefault();
-    document.getElementById("menu").classList.add("main-wrapper__hamburger-menu--visible");
+    $("#menu").addClass("main-wrapper__hamburger-menu--visible");
+    $(".main-wrapper__overlay").addClass("main-wrapper__overlay--visible");
 }
 
 function hideMenu(e) {
     e.preventDefault();
-    document.getElementById("menu").classList.remove("main-wrapper__hamburger-menu--visible");
+    $("#menu").removeClass("main-wrapper__hamburger-menu--visible");
+    $(".main-wrapper__overlay").removeClass("main-wrapper__overlay--visible");
 }
 
 function showComposition(e) {
@@ -49,27 +54,39 @@ function hideComposition(e) {
     document.getElementById("composition-details").classList.remove("composition-details--visible");
 }
 
-function acco(accoItems, e) {
-    let currentElement = e.currentTarget.parentNode,
-        className = currentElement.classList.item(0),
-        activeClassName = className + "--active";
+function employeeAcco(data, e) {
+    e.preventDefault();
+    const rootItem = $(e.currentTarget).parent();
+    const otherItems = rootItem.siblings();
+    const otherContainers = otherItems.find("." + data.containerClass);
+    const infoBlock = rootItem.find("." + data.contentClass);
+    const container = rootItem.find("." + data.containerClass);
+    const normalSize = (data.sideSize === "height") ? infoBlock.outerHeight() : infoBlock.outerWidth();
 
-    if (currentElement.classList.contains(activeClassName)) {
-        currentElement.classList.remove(activeClassName);
+    if (!rootItem.hasClass(data.activeClass)) {
+        rootItem.addClass(data.activeClass);
+        container.css(data.sideSize, normalSize);
+        otherItems.removeClass(data.activeClass);
+        otherContainers.css(data.sideSize, 0);
+
     }
     else {
-        currentElement.classList.add(activeClassName);
-
-        for (let i = 0; i < accoItems.length; i++) {
-            let parent = accoItems[i].parentNode;
-            if (parent.classList.contains(activeClassName) && parent !== currentElement) {
-                parent.classList.remove(activeClassName);
-            }
-        }
+        rootItem.removeClass(data.activeClass);
+        container.css(data.sideSize, 0);
     }
 }
 
-function closeCurrentElement(e) {
+function showReview(e) {
     e.preventDefault();
-    e.currentTarget.parentNode.classList.remove("food-category--active");
+    const rootItemBind = $(e.currentTarget).closest(".review").data("bind");
+    const review = $(".main-wrapper__review-popup[data-bind=" + rootItemBind + "]");
+    $(".main-wrapper__overlay").addClass("main-wrapper__overlay--visible");
+    review.addClass("main-wrapper__review-popup--visible");
+}
+
+function hideReview(e) {
+    e.preventDefault();
+    const rootItem = $(e.currentTarget).closest(".main-wrapper__review-popup");
+    $(".main-wrapper__overlay").removeClass("main-wrapper__overlay--visible");
+    rootItem.removeClass("main-wrapper__review-popup--visible");
 }

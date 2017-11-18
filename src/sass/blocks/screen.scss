@@ -208,6 +208,7 @@
 
   &--reviews {
     display: flex;
+    position: relative;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
