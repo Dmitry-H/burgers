@@ -1,6 +1,7 @@
 .food-category {
   display: flex;
   height: 100%;
+  max-width: 100%;
 
   &__header {
     margin: 0;
@@ -32,6 +33,7 @@
     align-items: center;
     width: 80px;
     cursor: pointer;
+    flex-shrink: 0;
 
     @include very-small {
       width: 48px;
@@ -68,8 +70,6 @@
     width: 0;
     overflow: hidden;
     transition: width 0.5s;
-
-
   }
 
   &__description {
@@ -84,9 +84,13 @@
     color: #fff;
     background-color: rgba(47, 50, 52, 0.9);
 
-    @include phone {
+/*    @include phone {
       max-width: 400px;
     }
+
+    @include very-small {
+      min-width: 17.9375rem;
+    }*/
   }
 
   &__close {
@@ -102,8 +106,10 @@
       position: absolute;
       left: 0;
       top: 0;
-      width: 100%;
-      height: 100%;
+      right: 0;
+      bottom: 0;
+      //width: 100%;
+      //height: 100%;
       z-index: 50;
 
       .food-category__close {

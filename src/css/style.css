@@ -466,17 +466,6 @@ html {
   to {
     max-height: 0; } }
 
-/*@mixin tablet {
-  @media (max-width: 48rem) {
-    @content;
-  }
-}
-
-@mixin phone {
-  @media (max-width: 30rem) {
-    @content;
-  }
-}*/
 .main-wrapper {
   position: relative;
   overflow: hidden; }
@@ -1289,7 +1278,8 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%; }
+  height: 100%;
+  max-width: 100%; }
   .food-category__header {
     margin: 0;
     line-height: 4rem;
@@ -1329,7 +1319,9 @@ html {
     -ms-flex-align: center;
     align-items: center;
     width: 5rem;
-    cursor: pointer; }
+    cursor: pointer;
+    -ms-flex-negative: 0;
+    flex-shrink: 0; }
     @media (max-width: 25rem) {
       .food-category__header-container {
         width: 3rem; } }
@@ -1367,10 +1359,14 @@ html {
     font-size: 0.875rem;
     font-family: ubuntulight, Arial, sans-serif;
     color: #fff;
-    background-color: rgba(47, 50, 52, 0.9); }
-    @media (max-width: 45rem) {
-      .food-category__description {
-        max-width: 25rem; } }
+    background-color: rgba(47, 50, 52, 0.9);
+    /*    @include phone {
+      max-width: 25rem;
+    }
+
+    @include very-small {
+      min-width: 17.9375rem;
+    }*/ }
   .food-category__close {
     display: none;
     position: absolute;
@@ -1391,8 +1387,8 @@ html {
         position: absolute;
         left: 0;
         top: 0;
-        width: 100%;
-        height: 100%;
+        right: 0;
+        bottom: 0;
         z-index: 50; }
         .food-category--active .food-category__close {
           display: block; } }

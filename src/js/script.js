@@ -61,7 +61,13 @@ function employeeAcco(data, e) {
     const otherContainers = otherItems.find("." + data.containerClass);
     const infoBlock = rootItem.find("." + data.contentClass);
     const container = rootItem.find("." + data.containerClass);
-    const normalSize = (data.sideSize === "height") ? infoBlock.outerHeight() : infoBlock.outerWidth();
+    let normalSize;
+
+    if (data.sideSize === "width") {
+        setWidth(rootItem);
+    }
+
+    normalSize = (data.sideSize === "height") ? infoBlock.outerHeight() : infoBlock.outerWidth()
 
     if (!rootItem.hasClass(data.activeClass)) {
         rootItem.addClass(data.activeClass);
@@ -74,6 +80,21 @@ function employeeAcco(data, e) {
         rootItem.removeClass(data.activeClass);
         container.css(data.sideSize, 0);
     }
+}
+
+function setWidth(rootItem) {
+    const listRoot = rootItem.closest(".food-categories");
+    const headerContainer = rootItem.find(".food-category__header-container");
+    const description = rootItem.find(".food-category__description");
+    let actualWidth;
+
+    if (window.matchMedia("(max-width: 720px)").matches) {
+        actualWidth = listRoot.outerWidth() - headerContainer.outerWidth();
+    }
+    else if (window.matchMedia("(max-width: 960px)").matches) {
+        actualWidth = listRoot.outerWidth() - headerContainer.outerWidth() * 3;
+    }
+    description.css("width", actualWidth);
 }
 
 function showReview(e) {
