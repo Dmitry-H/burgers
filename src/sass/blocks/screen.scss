@@ -2,7 +2,9 @@
   position: relative;
   min-width: 320px - 17px;
   min-height: 760px;
-  height: 100vh;
+  //min-height: 650px;
+  //height: 100vh;
+  height: 100%;
   box-sizing: border-box;
 
   &__page-header {
@@ -212,6 +214,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
+    min-height: 650px;
   }
 
   &--delivery {

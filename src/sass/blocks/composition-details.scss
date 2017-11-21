@@ -4,9 +4,12 @@
   background-color: rgba(#fff, 0.9);
   border-radius: 5px;
   visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
 
   &--visible {
     visibility: visible;
+    opacity: 1;
   }
 
   &__close {

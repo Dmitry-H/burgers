@@ -1,13 +1,36 @@
 /**
  * Created by Dmitry on 11.11.2017.
  */
+
+$(document).ready(() => {
+    $(".slider__slides").mySlider({
+        enableWheel: false,
+        prevSelector: ".slider__arrow--prev",
+        nextSelector: ".slider__arrow--next"
+    });
+
+    $(".main-wrapper__sections-wrapper").mySlider({
+        sliderDirection: "horizontal",
+        switcherSelector: ".screen-switcher",
+        switcherActiveClass: "screen-switcher__item--active",
+        animationDuration: 1000,
+        nextSelector: ".screen__scroll-down",
+        bindLinksSelectors: [
+            ".order",
+            ".main-nav__link",
+            ".hamburger-menu__link"
+        ]
+    });
+});
+
 window.onload = function() {
 
-    $("#menu-open").on("click", showMenu);
-    $("#menu-close").on("click", hideMenu);
+    $("#menu-open").on("click touchstart", showMenu);
+    $("#menu-close").on("click touchstart", hideMenu);
+    $(".hamburger-menu__link").on("click touchstart", hideMenu);
 
-    document.getElementById("composition-open").addEventListener("mouseenter", showComposition);
-    document.getElementById("composition-open").addEventListener("mouseleave", hideComposition);
+    $(".composition").on("click touchstart", toggleComposition);
+    $(".composition-details__close").on("click touchstart", hideComposition);
 
     let employeeData = {
         activeClass: "employee--active",
@@ -23,13 +46,15 @@ window.onload = function() {
         sideSize: "width"
     };
 
-    $(".employee__name").on("click", employeeAcco.bind(null, employeeData));
-    $(".food-category__header-container").on("click", employeeAcco.bind(null, menuData));
-    $(".food-category__close").on("click", employeeAcco.bind(null, menuData));
+    $(".employee__name").on("click touchstart", employeeAcco.bind(null, employeeData));
+    $(".food-category__header-container").on("click touchstart", employeeAcco.bind(null, menuData));
+    $(".food-category__close").on("click touchstart", employeeAcco.bind(null, menuData));
 
-    $(".review__detail").on("click", showReview);
-    $(".review__detail-phone").on("click", showReview);
-    $(".review-popup__close").on("click", hideReview);
+    $(".review__detail").on("click touchstart", showReview);
+    $(".review__detail-phone").on("click touchstart", showReview);
+    $(".review-popup__close").on("click touchstart", hideReview);
+
+
 };
 
 function showMenu(e) {
@@ -44,14 +69,13 @@ function hideMenu(e) {
     $(".main-wrapper__overlay").removeClass("main-wrapper__overlay--visible");
 }
 
-function showComposition(e) {
-    document.getElementById("composition-open").classList.add("composition--active");
-    document.getElementById("composition-details").classList.add("composition-details--visible");
+function toggleComposition(e) {
+    $(e.currentTarget).siblings(".composition-details").toggleClass("composition-details--visible");
 }
 
 function hideComposition(e) {
-    document.getElementById("composition-open").classList.remove("composition--active");
-    document.getElementById("composition-details").classList.remove("composition-details--visible");
+    e.preventDefault();
+    $(e.currentTarget).closest(".composition-details").removeClass("composition-details--visible");
 }
 
 function employeeAcco(data, e) {

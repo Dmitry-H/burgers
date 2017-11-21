@@ -84,6 +84,11 @@
     color: #fff;
     background-color: rgba(47, 50, 52, 0.9);
 
+    @include tablet {
+      width: 100%;
+      //width: auto;
+    }
+
 /*    @include phone {
       max-width: 400px;
     }

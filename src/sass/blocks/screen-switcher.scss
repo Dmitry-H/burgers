@@ -3,6 +3,12 @@
 
   &__item {
     margin-bottom: 5px;
+
+    &--active {
+      .screen-switcher__link {
+        border: 1px solid #f9fafa;
+      }
+    }
   }
 
   &__link {
@@ -13,10 +19,7 @@
     border: 1px solid transparent;
     border-radius: 50%;
     font-size: 0;
-
-    &--active {
-      border: 1px solid #f9fafa;
-    }
+    transition: 0.5s;
 
     &::before {
       content: "";
