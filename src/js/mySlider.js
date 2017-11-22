@@ -2,8 +2,10 @@
     const defaultSettings = {
         sliderDirection: "vertical",
         animationDuration: 1000,
-        enableWheel: "true",
-        enableSwipe: "true",
+        enableWheel: true,
+        enableSwipe: true,
+        enableKeyboardArrows: false,
+        infiniteLoop: true,
         switcherSelector: null,
         switcherActiveClass: null,
         prevSelector: null,
@@ -30,6 +32,7 @@
             initSwipe();
             initWheel();
             initLinks();
+            initArrows();
         };
 
         const initWheel = () => {
@@ -53,17 +56,33 @@
         const prevSlide = e => {
             if (e) e.preventDefault();
             let newSlide = slides.filter("." + activeSlideClass).prev();
-            if (!newSlide.length) return;
+            let newIndex = newSlide.index();
+            if (!newSlide.length) {
+                if (settings.infiniteLoop) {
+                    newIndex = slides.length - 1;
+                }
+                else {
+                    return;
+                }
+            }
 
-            goToIndex(newSlide.index())
+            goToIndex(newIndex)
         };
 
         const nextSlide = e => {
             if (e) e.preventDefault();
             let newSlide = slides.filter("." + activeSlideClass).next();
-            if (!newSlide.length) return;
+            let newIndex = newSlide.index();
+            if (!newSlide.length) {
+                if (settings.infiniteLoop) {
+                    newIndex = 0;
+                }
+                else {
+                    return;
+                }
+            }
 
-            goToIndex(newSlide.index())
+            goToIndex(newIndex);
         };
 
         const getPosition = slideIndex => {
@@ -115,16 +134,35 @@
             }
         };
 
+        const initArrows = () => {
+            if (!settings.enableKeyboardArrows) return;
+
+            $(document).on("keydown", e => {
+                switch (e.keyCode) {
+                    case settings.keyPrev:
+                        prevSlide();
+                        break;
+                    case settings.keyNext:
+                        nextSlide();
+                        break;
+                }
+            });
+        };
+
         const initDirection = () => {
             if (settings.sliderDirection === "vertical") {
                 settings.changingProperty = "translateX";
                 settings.swipePrev = "right";
                 settings.swipeNext = "left";
+                settings.keyPrev = 37;
+                settings.keyNext = 37;
             }
             else {
                 settings.changingProperty = "translateY";
                 settings.swipePrev = "down";
                 settings.swipeNext = "up";
+                settings.keyPrev = 38;
+                settings.keyNext = 40;
             }
         };
 

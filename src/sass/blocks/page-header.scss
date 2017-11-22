@@ -17,12 +17,18 @@
     margin-left: auto;
   }
 
-  &__hamburger-menu {
-    display: none;
-    margin-left: 31px;
-
-    @include tablet {
-      display: block;
-    }
+  &__buy {
+    margin-right: 44px;
   }
+
+/*  &__hamburger-menu-container {
+    //position: relative;
+    margin-left: 31px;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__hamburger-menu {
+
+  }*/
 }

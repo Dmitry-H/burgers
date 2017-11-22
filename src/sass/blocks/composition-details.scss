@@ -51,6 +51,10 @@
       @include phone {
         padding-right: 95px;
       }
+
+      @include very-small {
+        padding-right: 50px;
+      }
     }
   }
 }
