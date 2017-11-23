@@ -1,0 +1,44 @@
+.form-message {
+  position: relative;
+  padding: 5px 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  text-align: center;
+
+  &__header--error, &__content--error {
+    display: none;
+  }
+
+  &--error {
+    .form-message__header--success {
+      display: none;
+    }
+
+    .form-message__header--error {
+      display: block;
+    }
+  }
+
+  &__header {
+    font-family: $ubuntubold;
+    font-weight: normal;
+
+    &--success {
+      color: #0f0;
+    }
+
+    &--error {
+      color: #f00;
+    }
+  }
+
+  &__content {
+    font-family: $ubunturegular;
+  }
+
+  &__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}

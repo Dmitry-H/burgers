@@ -147,8 +147,7 @@
                                                 </tr>
                                                 <tr class="composition-details__row">
                                                     <td class="composition-details__cell">
-                                                        <svg width="38px" height="38.638px" style="fill: #8BC03F"
-                                                        ">
+                                                        <svg width="38px" height="38.638px" style="fill: #8BC03F">
                                                         <use xlink:href="img/sprite.svg#salad"></use>
                                                         </svg>
                                                     </td>
@@ -249,8 +248,7 @@
                                                 </tr>
                                                 <tr class="composition-details__row">
                                                     <td class="composition-details__cell">
-                                                        <svg width="38px" height="38.638px" style="fill: #8BC03F"
-                                                        ">
+                                                        <svg width="38px" height="38.638px" style="fill: #8BC03F">
                                                         <use xlink:href="img/sprite.svg#salad"></use>
                                                         </svg>
                                                     </td>
@@ -351,8 +349,7 @@
                                                 </tr>
                                                 <tr class="composition-details__row">
                                                     <td class="composition-details__cell">
-                                                        <svg width="38px" height="38.638px" style="fill: #8BC03F"
-                                                        ">
+                                                        <svg width="38px" height="38.638px" style="fill: #8BC03F">
                                                         <use xlink:href="img/sprite.svg#salad"></use>
                                                         </svg>
                                                     </td>
@@ -453,8 +450,7 @@
                                                 </tr>
                                                 <tr class="composition-details__row">
                                                     <td class="composition-details__cell">
-                                                        <svg width="38px" height="38.638px" style="fill: #8BC03F"
-                                                        ">
+                                                        <svg width="38px" height="38.638px" style="fill: #8BC03F">
                                                         <use xlink:href="img/sprite.svg#salad"></use>
                                                         </svg>
                                                     </td>
@@ -555,8 +551,7 @@
                                                 </tr>
                                                 <tr class="composition-details__row">
                                                     <td class="composition-details__cell">
-                                                        <svg width="38px" height="38.638px" style="fill: #8BC03F"
-                                                        ">
+                                                        <svg width="38px" height="38.638px" style="fill: #8BC03F">
                                                         <use xlink:href="img/sprite.svg#salad"></use>
                                                         </svg>
                                                     </td>
@@ -902,7 +897,7 @@
         <section class="screen  screen--delivery">
             <h2 class="screen__title  screen__title--yellow">Закажите доставку</h2>
             <div class="content">
-                <form action="#">
+                <form id="order-form" action="sendmail.php" method="post">
                     <div class="main-form">
                         <div class="main-form__input-column">
                             <div class="main-form__input-line">
@@ -912,7 +907,7 @@
                                 </div>
                                 <div class="main-form__input-wrapper">
                                     <label for="phone" class="main-form__input-label">Телефон</label>
-                                    <input id="phone" name="phone" type="text" class="main-form__input-data">
+                                    <input id="phone" name="phone" type="tel" class="main-form__input-data">
                                 </div>
                             </div>
                             <div class="main-form__input-line">
@@ -932,20 +927,19 @@
                                 </div>
                                 <div class="main-form__input-wrapper  main-form__input-wrapper--room">
                                     <label for="room" class="main-form__input-label">Квартира</label>
-                                    <input id="room" name="room" type="text" class="main-form__input-data">
+                                    <input id="room" name="room" type="number" class="main-form__input-data">
                                 </div>
                                 <div class="main-form__input-wrapper  main-form__input-wrapper--floor">
                                     <label for="floor" class="main-form__input-label">Этаж</label>
-                                    <input id="floor" name="floor" type="text" class="main-form__input-data">
+                                    <input id="floor" name="floor" type="number" class="main-form__input-data">
                                 </div>
                             </div>
                         </div>
                         <div class="main-form__input-column">
                             <div class="main-form__input-line">
                                 <div class="main-form__input-wrapper">
-                                    <label for="" class="main-form__input-label">Комментарий</label>
-                                    <textarea name="" id=""
-                                              class="main-form__input-data  main-form__input-data--textarea"></textarea>
+                                    <label for="commentary" class="main-form__input-label">Комментарий</label>
+                                    <textarea name="commentary" id="commentary" class="main-form__input-data  main-form__input-data--textarea"></textarea>
                                 </div>
                             </div>
                             <div class="main-form__input-line  main-form__input-line--center">
@@ -1096,6 +1090,16 @@
             </ul>
         </div>
     </div>
+    <div class="main-wrapper__form-message">
+        <div class="form-message">
+            <b class="form-message__header  form-message__header--success">Успешно</b>
+            <b class="form-message__header  form-message__header--error">Ошибка</b>
+            <p class="form-message__content">Данные были отправлены</p>
+            <a href="#" class="form-message__close">
+                <span class="cross"></span>
+            </a>
+        </div>
+    </div>
     <div class="main-wrapper__review-popup" data-bind="review-1">
         <div class="review-popup">
             <b class="review-popup__header">Константин Спилберг 1</b>
@@ -1172,7 +1176,7 @@
 <script src="./js/jquery-3.2.1.js"></script>
 <script src="./js/jquery.touchSwipe.min.js"></script>
 <script src="./js/mobile-detect.min.js"></script>
-<script src="js/mySlider.js"></script>
+<script src="./js/mySlider.js"></script>
 <script src="./js/script.js"></script>
 
 </body>

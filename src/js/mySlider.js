@@ -19,11 +19,9 @@
         const activeSlideClass = "current-slide";
         let inScroll = false;
 
-        sliderRoot.addClass("mySlider-slides");
-
-        slides.eq(0).addClass(activeSlideClass);
-
         const initSettings = () => {
+            sliderRoot.addClass("mySlider-slides");
+            slides.eq(0).addClass(activeSlideClass);
             settings.__proto__ = defaultSettings;
             initControls();
             initDirection();
@@ -37,7 +35,7 @@
 
         const initWheel = () => {
             if (!settings.enableWheel) return;
-            sliderRoot.on("wheel", e => {
+            sliderRoot.on("mousewheel", e => {
                 if (inScroll) return;
                 inScroll = true;
                 if (e.originalEvent.deltaY < 0) {
@@ -109,6 +107,7 @@
             for (let i = 0; i < switchItems.length; i++) {
                 switchItems.eq(i).data("slide", i);
                 switchItems.eq(i).on("click touchstart", e => {
+                    if (e) e.preventDefault();
                     let currentLink = $(e.currentTarget);
                     let index = parseInt(currentLink.data("slide"));
                     goToIndex(index);
@@ -178,7 +177,7 @@
 
             for (let i = 0; i < selectorsList.length; i++) {
                 let currentElement = $(selectorsList[i]);
-                for (j = 0; j < currentElement.length; j++) {
+                for (let j = 0; j < currentElement.length; j++) {
                     currentElement.eq(j).on("click touchstart", e => {
                         e.preventDefault();
                         let index = parseInt($(e.currentTarget).data("slide"));

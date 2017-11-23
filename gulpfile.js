@@ -7,12 +7,14 @@ var gulp = require('gulp'),
 	cssunit = require("gulp-css-unit"),
 	clean = require("gulp-clean"),
 	newer = require("gulp-newer"),
-    runSequence = require("run-sequence");
+    runSequence = require("run-sequence"),
+	babel = require("gulp-babel");
 
 gulp.task('watch', ['browserSync', 'sass'], function(){
     gulp.watch('src/sass/**/*.scss', ['sass']);
 	gulp.watch('src/*.html', browserSync.reload);
 	gulp.watch('src/css/*.css', browserSync.reload);
+	// gulp.watch('src/js/*.js', ['babel']);
 	gulp.watch('src/js/*.js', browserSync.reload);
 });
 
@@ -39,6 +41,16 @@ gulp.task("sass", function(){
 		// .pipe(cleanCSS())
 		.pipe(gulp.dest("./src/css"))
 		.pipe(browserSync.reload({stream: true}));
+});
+
+gulp.task("babel", function() {
+	gulp.src("src/js/*.js")
+		.pipe(babel({
+			presets: ["env"]
+		}))
+		.pipe(gulp.dest("src/js/babel"));
+        // .pipe(browserSync.reload({stream: true}));
+        browserSync.reload({stream: true});
 });
 
 gulp.task("build", function () {

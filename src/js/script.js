@@ -61,13 +61,16 @@ window.onload = function() {
     $(".review-popup__close").on("click touchstart", hideReview);
 
     $(document).on("keydown", e => {
-        console.log(e.keyCode);
         if (e.keyCode === 27) {
             hideComposition();
             hideReview();
             hideMenu();
+            hideFormMessage();
         }
     });
+
+    $("#order-form").on("submit", sendForm);
+    $(".form-message__close").on("click touch", hideFormMessage)
 };
 
 function showMenu(e) {
@@ -173,14 +176,10 @@ function showReview(e) {
     setTimeout(()=> {
         $(document).on("click touchstart", hideReviewOnOutsideClick);
     }, 100);
-
 }
 
 function hideReview(e) {
     if (e) e.preventDefault();
-    /*const rootItem = $(e.currentTarget).closest(".main-wrapper__review-popup");
-    $(".main-wrapper__overlay").removeClass("main-wrapper__overlay--visible");
-    rootItem.removeClass("main-wrapper__review-popup--visible");*/
     $(".main-wrapper__review-popup--visible").removeClass("main-wrapper__review-popup--visible");
     $(".main-wrapper__overlay").removeClass("main-wrapper__overlay--visible");
 
@@ -192,4 +191,77 @@ function hideReviewOnOutsideClick(e) {
     if(!menu.has(e.target).length) {
         hideReview();
     }
+}
+
+function showFormMessage(success, message) {
+    const messageContainer = $(".main-wrapper__form-message");
+    const messageRoot = $(".form-message");
+
+    if (success) {
+        messageRoot.removeClass("form-message--error");
+    }
+    else {
+        messageRoot.addClass("form-message--error");
+    }
+    $(".form-message__content").html(message);
+    $(".main-wrapper__overlay").addClass("main-wrapper__overlay--visible");
+    messageContainer.addClass("main-wrapper__form-message--visible")
+
+    setTimeout(()=> {
+        $(document).on("click touchstart", hideFormMessageOnOutsideClick);
+    }, 100);
+}
+
+function hideFormMessageOnOutsideClick(e) {
+    let menu = $(".form-message");
+    if(!menu.has(e.target).length) {
+        hideFormMessage();
+    }
+}
+
+function hideFormMessage(e) {
+    if (e) e.preventDefault();
+    $(".main-wrapper__overlay").removeClass("main-wrapper__overlay--visible");
+    $(".main-wrapper__form-message--visible").removeClass("main-wrapper__form-message--visible");
+}
+
+function sendForm(e) {
+    if (e) e.preventDefault();
+    const form = $(e.target);
+    let result;
+    if (!checkFormFields(form)) {
+        showFormMessage(false, "Необходимо заполнить все поля");
+        return;
+    }
+    result = $.ajax({
+        url: form.attr("action"),
+        type: form.attr("method"),
+        data: form.serialize(),
+        dataType: "json"
+    });
+
+    result.done(msg => {
+        if (msg["ans"] === "ok") {
+            showFormMessage(true, "Данные были успешно отправлены");
+            form[0].reset();
+        }
+        else {
+            showFormMessage(false, "Произошла ошибка");
+        }
+    });
+
+    result.fail(msg => {
+        showFormMessage(false);
+    });
+}
+
+function checkFormFields(form) {
+    let fields = form.find("input, textarea");
+    let fieldsOK = true;
+    fields.each((index, element) => {
+        if ($(element).val() === "" && $(element).attr("name") !=="floor") {
+            fieldsOK = false;
+        }
+    });
+    return fieldsOK;
 }
