@@ -73,6 +73,32 @@ window.onload = function() {
     $(".form-message__close").on("click touch", hideFormMessage)
 };
 
+function initMap() {
+    let center = {lat: 59.935164, lng: 30.339427};
+    let marks = [
+        {lat: 59.896228, lng: 30.424273},
+        {lat: 59.971850, lng: 30.309884},
+        {lat: 59.893108, lng: 30.316064},
+        {lat: 59.917250, lng: 30.494076}
+    ];
+    let markers = [];
+    let icon = "img/map-marker.svg";
+    let map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: center,
+        gestureHandling: "none"
+    });
+
+    for (let i = 0; i < marks.length; i++) {
+        let marker= new google.maps.Marker({
+            position: marks[i],
+            map: map,
+            icon: icon
+        });
+        markers.push(marker);
+    }
+}
+
 function showMenu(e) {
     if (e) e.preventDefault();
     $("#menu").addClass("main-wrapper__hamburger-menu--visible");

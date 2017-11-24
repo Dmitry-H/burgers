@@ -44,7 +44,7 @@ if (isset($_POST['name']) &&
                 "Оплата: ${payment}\n" .
                 "Перезвонить: ${recall}";
 
-    $result = mail($address, $theme, $message);
+    $result = mail($address, $theme, $message, "Content-type: text/plain; charset=\"utf-8\"");
     if ($result) {
         $answer["ans"] = "ok";
     }

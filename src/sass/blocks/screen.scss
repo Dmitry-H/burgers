@@ -92,10 +92,10 @@
   }
 
   &__contacts {
-    position: absolute;
+/*    position: absolute;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 0;*/
     @include bg-image("bg-contacts.jpg");
   }
 
@@ -247,5 +247,7 @@
 
   &--contact {
     @include bg-image("bg-map.jpg");
+    display: flex;
+    flex-direction: column;
   }
 }
