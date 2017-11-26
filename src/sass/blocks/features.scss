@@ -14,8 +14,11 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    flex-basis: 300px;
+    //flex-basis: 300px;
     //flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 300px;
 
     @include phone {
       margin-bottom: 42px;
@@ -64,6 +67,7 @@
 
   &__info {
 
+    max-width: 100%;
     @include phone {
       width: 319px;
     }

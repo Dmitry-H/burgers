@@ -1,5 +1,7 @@
 "use strict";
 
+function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+
 (function ($) {
     var defaultSettings = {
         sliderDirection: "vertical",
@@ -24,7 +26,9 @@
         var initSettings = function initSettings() {
             sliderRoot.addClass("mySlider-slides");
             slides.eq(0).addClass(activeSlideClass);
-            settings.__proto__ = defaultSettings;
+
+            _defaults(settings, defaultSettings);
+
             initControls();
             initDirection();
             initDuration();
@@ -37,7 +41,7 @@
 
         var initWheel = function initWheel() {
             if (!settings.enableWheel) return;
-            sliderRoot.on("wheel", function (e) {
+            sliderRoot.on("mousewheel wheel", function (e) {
                 if (inScroll) return;
                 inScroll = true;
                 if (e.originalEvent.deltaY < 0) {

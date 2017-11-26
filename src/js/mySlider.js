@@ -35,7 +35,7 @@
 
         const initWheel = () => {
             if (!settings.enableWheel) return;
-            sliderRoot.on("wheel", e => {
+            sliderRoot.on("mousewheel wheel", e => {
                 if (inScroll) return;
                 inScroll = true;
                 if (e.originalEvent.deltaY < 0) {

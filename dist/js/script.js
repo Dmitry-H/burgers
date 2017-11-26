@@ -5,6 +5,8 @@
  */
 
 $(document).ready(function () {
+    svg4everybody();
+
     $(".slider__slides").mySlider({
         enableWheel: false,
         prevSelector: ".slider__arrow--prev",

@@ -40,11 +40,13 @@
     white-space: nowrap;
     width: 100%;
     font-size: 0;
+
   }
 
   &__screen {
     display: inline-flex;
     white-space: normal;
+    width: 100%;
 
     @include tablet {
       flex-direction: column;

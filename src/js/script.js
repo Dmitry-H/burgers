@@ -3,6 +3,8 @@
  */
 
 $(document).ready(() => {
+    svg4everybody();
+
     $(".slider__slides").mySlider({
         enableWheel: false,
         prevSelector: ".slider__arrow--prev",
@@ -26,6 +28,8 @@ $(document).ready(() => {
 });
 
 window.onload = function() {
+
+
 
     $("#menu-open").on("click touchstart", showMenu);
     $("#menu-close").on("click touchstart", hideMenu);

@@ -46,7 +46,8 @@ gulp.task("sass", function(){
 gulp.task("scripts", function() {
 	gulp.src("src/js/*.js")
 		.pipe(babel({
-			presets: ["env"]
+			presets: ["env"],
+            "plugins": ["transform-proto-to-assign"]
 		}))
 		.pipe(gulp.dest("./dist/js"));
         // .pipe(browserSync.reload({stream: true}));
