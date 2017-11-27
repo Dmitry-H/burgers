@@ -10,6 +10,10 @@
     width: 460px;
   }
 
+  @include phone-small {
+    width: 390px;
+  }
+
   &__header {
     display: block;
     margin-bottom: 23px;
